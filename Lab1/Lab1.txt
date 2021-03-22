@@ -29,9 +29,9 @@ bool checkIfListContainOddNumber(List<num> list) {
 
 
 //task3
-
-// void main() {
+void main() {
 //   switchBetweenLowerAndUpper("The wren\nEarns his living.\nNoiselessly");
+//   upperAndLowercase("The wren\nEarns his living.\nNoiselessly");
 // }
 
 // void switchBetweenLowerAndUpper(final String s) {
@@ -55,4 +55,14 @@ bool checkIfListContainOddNumber(List<num> list) {
 //     print(tmp.toUpperCase());
 //   } else
 //     print(tmp.toLowerCase());
+// }
+
+
+// void upperAndLowercase(String s){
+  
+//   List word = s.split("\n");
+//   print(word[0]);
+//   print(word[1].toUpperCase());
+//   print(word[2].toLowerCase());
+ 
 // }
