@@ -1,0 +1,58 @@
+//task 1 & 2
+
+import 'dart:math';
+
+void main() {
+  printEvenNumber(1, 10);
+
+  var rnd = new Random();
+  var list = List.generate(20, (_) => rnd.nextInt(100));
+  if (checkIfListContainOddNumber(list))
+    print("contain odd number");
+  else
+    print("dosen't contain odd number");
+}
+
+void printEvenNumber(int num1, int num2) {
+  for (int i = num1; i <= num2; i++) {
+    if (i % 2 == 0) print(i);
+  }
+}
+
+bool checkIfListContainOddNumber(List<num> list) {
+  var retval = false;
+  for (var i in list) {
+    if (i % 2 != 0) retval = true;
+  }
+  return retval;
+}
+
+
+//task3
+
+// void main() {
+//   switchBetweenLowerAndUpper("The wren\nEarns his living.\nNoiselessly");
+// }
+
+// void switchBetweenLowerAndUpper(final String s) {
+//   bool turn = true;
+//   String tmp = "";
+//   for (int i = 0; i < s.length; ++i) {
+//     if (s[i] == '\n') {
+//       if (turn) {
+//         print(tmp.toUpperCase());
+//       } else
+//         print(tmp.toLowerCase());
+
+//       turn = !turn;
+
+//       tmp = "";
+//     } else {
+//       tmp += s[i];
+//     }
+//   }
+//   if (turn) {
+//     print(tmp.toUpperCase());
+//   } else
+//     print(tmp.toLowerCase());
+// }
