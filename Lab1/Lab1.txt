@@ -30,39 +30,23 @@ bool checkIfListContainOddNumber(List<num> list) {
 
 //task3
 void main() {
-//   switchBetweenLowerAndUpper("The wren\nEarns his living.\nNoiselessly");
+//   split("""The wren 
+//   Earns his living
+//   Noiselessly""");
+
 //   upperAndLowercase("The wren\nEarns his living.\nNoiselessly");
 // }
 
-// void switchBetweenLowerAndUpper(final String s) {
-//   bool turn = true;
-//   String tmp = "";
-//   for (int i = 0; i < s.length; ++i) {
-//     if (s[i] == '\n') {
-//       if (turn) {
-//         print(tmp.toUpperCase());
-//       } else
-//         print(tmp.toLowerCase());
-
-//       turn = !turn;
-
-//       tmp = "";
-//     } else {
-//       tmp += s[i];
-//     }
-//   }
-//   if (turn) {
-//     print(tmp.toUpperCase());
-//   } else
-//     print(tmp.toLowerCase());
+// void split(String s) {
+//   var arr = s.split('\n');
+//   print(arr[0]);
+//   print(arr[1].toUpperCase());
+//   print(arr[2].toLowerCase());
 // }
 
-
-// void upperAndLowercase(String s){
-  
+// void upperAndLowercase(String s) {
 //   List word = s.split("\n");
 //   print(word[0]);
 //   print(word[1].toUpperCase());
 //   print(word[2].toLowerCase());
- 
 // }
