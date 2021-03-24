@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/Home.dart';
+import 'package:lab3/SignUp.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -6,8 +8,10 @@ class SignIn extends StatefulWidget {
     return SignUpState();
   }
 }
+
 class SignUpState extends State<StatefulWidget> {
   var _isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +47,6 @@ class SignUpState extends State<StatefulWidget> {
                     image: AssetImage("assets/images/logo2.png"),
                   ),
                   shape: BoxShape.circle,
-                  color: Colors.blue,
                 ),
                 alignment: Alignment.center,
               ),
@@ -77,10 +80,13 @@ class SignUpState extends State<StatefulWidget> {
               SizedBox(height: 15),
               Container(
                 width: double.infinity,
-                child: Text(
-                  "Forget Password?",
-                  textAlign: TextAlign.end,
-                  style: TextStyle(color: Colors.black),
+                child: Container(
+                  margin: const EdgeInsets.only(right: 20.0),
+                  child: Text(
+                    "Forget Password?",
+                    textAlign: TextAlign.end,
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
               SizedBox(
@@ -89,15 +95,22 @@ class SignUpState extends State<StatefulWidget> {
               Container(
                 width: 300,
                 child: ElevatedButton(
-                    child: Text("LOGIN",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
+                    child: Text(
+                      "LOGIN",
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     style: ButtonStyle(
                       foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
+                          MaterialStateProperty.all<Color>(Colors.blue),
                       backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
+                          MaterialStateProperty.all<Color>(Colors.white),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
@@ -111,10 +124,16 @@ class SignUpState extends State<StatefulWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Don't Have an account?"),
-                  Text(
-                    "Register",
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                  new GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SignUp()));
+                    },
+                    child: new Text(
+                      "Register",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),

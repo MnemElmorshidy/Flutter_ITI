@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/Home.dart';
+import 'package:lab3/SignIn.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -9,11 +11,11 @@ class SignUp extends StatefulWidget {
 
 class signupState extends State<StatefulWidget> {
   var _isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -31,7 +33,6 @@ class signupState extends State<StatefulWidget> {
                         fontWeight: FontWeight.w600,
                         fontSize: 25,
                         color: Colors.black,
-
                         decoration: TextDecoration.none,
                       ),
                     ),
@@ -46,7 +47,6 @@ class signupState extends State<StatefulWidget> {
                     image: AssetImage("assets/images/logo2.png"),
                   ),
                   shape: BoxShape.circle,
-                  color: Colors.blue,
                 ),
                 alignment: Alignment.center,
               ),
@@ -105,23 +105,28 @@ class signupState extends State<StatefulWidget> {
                 ),
               ),
               SizedBox(height: 15),
-
               SizedBox(
                 height: 30,
               ),
               Container(
                 width: 300,
                 child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
                     child: Text(
                       "SignUp",
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     style: ButtonStyle(
                       foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
+                          MaterialStateProperty.all<Color>(Colors.blue),
                       backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
+                          MaterialStateProperty.all<Color>(Colors.white),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
@@ -135,10 +140,16 @@ class signupState extends State<StatefulWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Already Have an account:"),
-                  Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
+                  new GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SignIn()));
+                    },
+                    child: new Text(
+                      "Login",
+                      style: TextStyle(
+                          color: Colors.grey, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:lab3/SignIn.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -11,6 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
 
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (BuildContext context) => SignIn())));
   }
 
   @override
@@ -43,7 +50,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       Padding(
                         padding: EdgeInsets.only(top: 10.0),
                       ),
-                      Text("Online Shopping",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontStyle: FontStyle.italic),)
+                      Text(
+                        "Online Shopping",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic),
+                      )
                     ],
                   ),
                 ),
@@ -53,7 +66,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-
                     CircleAvatar(
                       child: Image.asset(
                         "assets/images/card.png",
@@ -72,7 +84,6 @@ class _SplashScreenState extends State<SplashScreen> {
                         decoration: TextDecoration.none,
                       ),
                     ),
-
                   ],
                 ),
               )
