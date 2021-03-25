@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +19,20 @@ class _HomePageState extends State<HomePage> {
           Text("saraa poly silk"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Icon(Icons.favorite), Icon(Icons.add_shopping_cart)],
+            children: [
+              Icon(Icons.favorite),
+              Align(
+                child: Badge(
+                  badgeColor: Colors.yellow,
+                  badgeContent: Text(
+                    '3',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  child: Icon(Icons.add_shopping_cart),
+                ),
+              )
+            ],
           )
         ],
       )),
@@ -113,7 +127,8 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.red[200],
                             ),
                             child: Container(
-                              padding: EdgeInsets.only(left: 8,right: 8,bottom: 4,top: 4),
+                              padding: EdgeInsets.only(
+                                  left: 8, right: 8, bottom: 4, top: 4),
                               child: Text(
                                 "4.3",
                                 style: TextStyle(color: Colors.white),
